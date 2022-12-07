@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SiteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +14,11 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('/site/index');
-});
+// Route::get('/', function () {
+//     return view('site.index');
+// });
 
+
+Route::get('/', [SiteController::class, 'index']);
 Route::get('/signup', [RegisterController::class, 'index'])->name('registro');
 Route::post('/signup', [RegisterController::class, 'store'])->name('registro');

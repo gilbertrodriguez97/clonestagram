@@ -14,37 +14,37 @@ Regístrate
             @csrf
             <div class="mb-5">
                 <label for="name" class = "mb-2 block uppercase text-gray-500 font-bold">Nombre</label>
-                <input type="text" id="name" name="name" placeholder="Tu nombre" class="border p-3 w-full rounded-lg">
+                <input type="text" id="name" name="name" placeholder="Tu nombre" class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror" value="{{old('name')}}">
                 @error('name')
                 <span class="text-red-500 my-2 text-sm p-2 text-center">{{$message}}</span>
                 @enderror
             </div>
             <div class="mb-5">
                 <label for="username" class = "mb-2 block uppercase text-gray-500 font-bold">Username</label>
-                <input type="text" id="username" name="username" placeholder="Tu nombre de usuario" class="border p-3 w-full rounded-lg">
-                @error('name')
-                <span class="text-red-500 my-2 text-sm p-2 text-center">El usuario es obligatorio</span>
+                <input type="text" id="username" name="username" placeholder="Tu nombre de usuario" class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror">
+                @error('username')
+                <span class="text-red-500 my-2 text-sm p-2 text-center">{{$message}}</span>
                 @enderror
             </div>
             <div class="mb-5">
                 <label for="email" class = "mb-2 block uppercase text-gray-500 font-bold">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Tu e-mail" class="border p-3 w-full rounded-lg">
-                @error('name')
-                <span class="text-red-500 my-2 text-sm p-2 text-center">El correo electronico es obligatorio</span>
+                <input type="email" id="email" name="email" placeholder="Tu e-mail" class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror">
+                @error('email')
+                <span class="text-red-500 my-2 text-sm p-2 text-center">{{$message}}</span>
                 @enderror
             </div>
             <div class="mb-5">
                 <label for="password" class = "mb-2 block uppercase text-gray-500 font-bold">Password</label>
-                <input type="password" id="password" name="password" placeholder="Tu contraseña" class="border p-3 w-full rounded-lg">
-                @error('name')
-                <span class="text-red-500 my-2 text-sm p-2 text-center">La contraseña es obligatoria</span>
+                <input type="password" id="password" name="password" placeholder="Tu contraseña" class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror">
+                @error('password')
+                <span class="text-red-500 my-2 text-sm p-2 text-center">{{$message}}</span>
                 @enderror
             </div>
             <div class="mb-5">
                 <label for="password_confirmation" class = "mb-2 block uppercase text-gray-500 font-bold">Repeat password</label>
-                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Repite tu contraseña" class="border p-3 w-full rounded-lg">
-                @error('name')
-                <span class="text-red-500 my-2 text-sm p-2 text-center">Es necesario confirmar la contraseña</span>
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Repite tu contraseña" class="border p-3 w-full rounded-lg @error('password_confirmation') border-red-500 @enderror">
+                @error('password_confirmation')
+                <span class="text-red-500 my-2 text-sm p-2 text-center">{{$message}}</span>
                 @enderror
             </div>
             <input type="submit" value="Crear cuenta" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
